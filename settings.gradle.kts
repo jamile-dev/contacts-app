@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "contacts-app"
 include(":app")
- 
+include(":data")
+include(":domain")
+include(":presentation")

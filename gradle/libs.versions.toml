@@ -20,6 +20,7 @@ appcompat = "1.7.0"
 coroutinesTest = "1.9.0"
 mockk = "1.13.16"
 ksp = "2.1.0-1.0.29"
+material = "1.12.0"
 
 [libraries]
 # Koin
@@ -69,6 +70,7 @@ androidx-room-testing = { group = "androidx.room", name = "room-testing", versio
 kotlin-coroutines-test = { group = "org.jetbrains.kotlinx", name="kotlinx-coroutines-test", version.ref = "coroutinesTest" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 mockk-lib = { group = "io.mockk", name="mockk", version.ref = "mockk" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 
 [plugins]
