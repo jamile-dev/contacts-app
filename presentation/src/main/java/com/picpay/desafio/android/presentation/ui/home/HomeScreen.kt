@@ -1,6 +1,7 @@
 package com.picpay.desafio.android.presentation.ui.home
 
 import UserList
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,10 +13,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.picpay.desafio.android.presentation.ui.components.ErrorScreen
+import com.picpay.desafio.android.presentation.ui.components.HomeHeader
 import com.picpay.desafio.android.presentation.ui.components.SearchTextField
 import com.picpay.desafio.android.presentation.ui.state.UIState
 import org.koin.androidx.compose.koinViewModel
@@ -26,7 +28,7 @@ fun HomeScreen(
     navigateToDetails: (String) -> Unit,
 ) {
     val usersUiState by viewModel.usersUiState.collectAsState()
-    var searchQuery by remember { mutableStateOf("") }
+    val searchQuery by remember { mutableStateOf("") }
 
     LaunchedEffect(Unit) { viewModel.loadUsers() }
 
@@ -35,6 +37,8 @@ fun HomeScreen(
     }
 
     Column(modifier = Modifier.fillMaxSize()) {
+        HomeHeader()
+
         SearchTextField(
             query = remember { mutableStateOf(searchQuery) },
             onSearch = onSearch,
@@ -46,7 +50,13 @@ fun HomeScreen(
 
         when (val usersState = usersUiState) {
             is UIState.Loading -> {
-                CircularProgressIndicator(modifier = Modifier.fillMaxSize())
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                ) {
+                    CircularProgressIndicator()
+                }
             }
 
             is UIState.Success -> {

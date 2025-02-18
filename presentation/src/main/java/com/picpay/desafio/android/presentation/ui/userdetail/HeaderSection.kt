@@ -58,7 +58,7 @@ fun HeaderSection(user: User) {
             style =
                 MaterialTheme.typography.headlineSmall.copy(
                     fontWeight = FontWeight.Bold,
-                    color = AppColors.Blue,
+                    color = AppColors.Green,
                 ),
         )
 
@@ -68,7 +68,7 @@ fun HeaderSection(user: User) {
             text = "@${user.username}",
             style =
                 MaterialTheme.typography.bodyMedium.copy(
-                    color = AppColors.Blue.copy(alpha = 0.7f),
+                    color = AppColors.Green.copy(alpha = 0.7f),
                 ),
         )
     }

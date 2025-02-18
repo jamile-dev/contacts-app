@@ -50,7 +50,6 @@ android {
 dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
-    implementation(libs.paging)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
     implementation(libs.koin.core)

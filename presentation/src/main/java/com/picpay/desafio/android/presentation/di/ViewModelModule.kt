@@ -9,5 +9,5 @@ val viewModelModule =
     module {
         factory { HomeViewModel(get(), get(), get(), get()) }
         factory { FavoritesViewModel(get(), get()) }
-        factory { UserDetailViewModel(get()) }
+        factory { UserDetailViewModel(get(), get()) }
     }

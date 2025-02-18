@@ -2,9 +2,7 @@ package com.picpay.desafio.android.presentation.ui.userdetail
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -51,8 +49,8 @@ fun UserDetailScreen(
                 title = {
                     Text(
                         text = stringResource(R.string.user_details),
-                        color = AppColors.Blue,
-                        style = MaterialTheme.typography.titleMedium,
+                        color = AppColors.Black,
+                        style = MaterialTheme.typography.titleLarge,
                     )
                 },
                 navigationIcon = {
@@ -79,7 +77,7 @@ fun UserDetailScreen(
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center,
                     ) {
-                        CircularProgressIndicator(color = AppColors.Blue)
+                        CircularProgressIndicator(color = AppColors.Green)
                     }
                 }
 
@@ -108,10 +106,9 @@ fun UserDetailScreen(
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
                         HeaderSection(user)
-                        Spacer(modifier = Modifier.height(24.dp))
                         FavoriteStatus(
                             user = user,
-                            onFavoriteClick = { },
+                            onFavoriteClick = { userDetailViewModel.toggleFavorite() },
                         )
                     }
                 }

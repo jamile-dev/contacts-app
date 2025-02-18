@@ -13,7 +13,6 @@ retrofit = "2.11.0"
 okhttp = "4.9.3"
 ktlint = "11.5.1"
 room = "2.6.1"
-paging = "3.3.6"
 koin = "4.0.2"
 navigationCompose = "2.8.7"
 appcompat = "1.7.0"
@@ -53,11 +52,6 @@ retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
 coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
-
-# Paging
-pagingCompose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
-paging = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
-androidx-paging-common-android = { group = "androidx.paging", name = "paging-common-android", version.ref = "paging" }
 
 # Testing
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
