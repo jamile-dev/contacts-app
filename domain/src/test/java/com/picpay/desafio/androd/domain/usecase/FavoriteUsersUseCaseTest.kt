@@ -44,7 +44,7 @@ class FavoriteUsersUseCaseTest {
             val result = useCase(userId, isFavorite)
 
             // Assert
-            assertEquals(Error(exception), result)
+            assertEquals(Result.Error(exception), result)
             coVerify { userRepository.toggleFavoriteUser(userId, isFavorite) }
         }
 }
