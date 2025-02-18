@@ -1,58 +1,44 @@
-package com.picpay.desafio.android.ui.theme
+package com.picpay.desafio.android.presentation.ui.theme
 
-import android.app.Activity
-import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
+import com.picpay.desafio.android.presentation.ui.theme.AppColors.Black
+import com.picpay.desafio.android.presentation.ui.theme.AppColors.Blue
+import com.picpay.desafio.android.presentation.ui.theme.AppColors.Green
+import com.picpay.desafio.android.presentation.ui.theme.AppColors.Red
+import com.picpay.desafio.android.presentation.ui.theme.AppColors.White
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
+object AppColors {
+    val Blue = Color(0xFF00B5E2)
+    val Green = Color(0xFF00D187)
+    val White = Color(0xFFFFFFFF)
+    val Black = Color(0xFF000000)
+    val Red = Color(0xFFEA4335)
+}
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
-)
+private val LightColorScheme =
+    lightColorScheme(
+        primary = Blue,
+        secondary = Green,
+        background = White,
+        surface = White,
+        error = Red,
+        onPrimary = White,
+        onSecondary = White,
+        onBackground = Black,
+        onSurface = Black,
+        onError = White,
+    )
 
 @Composable
-fun ContactsappTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
-) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
+fun ContactsAppTheme(content: @Composable () -> Unit) {
+    val colorScheme = LightColorScheme
 
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content
+        content = content,
     )
 }
