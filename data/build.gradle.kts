@@ -21,7 +21,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.pagingCompose)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.koin.core)
     ksp(libs.androidx.room.compiler)
 
     androidTestImplementation(kotlin("test"))
