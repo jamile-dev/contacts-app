@@ -54,8 +54,6 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.okhttp.logging.interceptor)
     implementation(libs.retrofit.converter.gson)
-    implementation(libs.paging)
-    implementation(libs.pagingCompose)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
     implementation(libs.koin.core)
