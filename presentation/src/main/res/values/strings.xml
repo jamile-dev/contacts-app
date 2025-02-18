@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_image">profile image</string>
+    <string name="favorite_icon">favorite icon</string>
+    <string name="favorite">Favorite</string>
+    <string name="user_details">User details</string>
+    <string name="icon_back">icon back</string>
+    <string name="error">Error: %1$s</string>
+    <string name="error_icon">error icon</string>
+    <string name="an_error_has_occurred">An error has occurred</string>
+    <string name="try_again">Try again</string>
+    <string name="retry">Retry</string>
+    <string name="you_don_t_have_any_favorites_yet">You don\'t have any favorites yet!</string>
+    <string name="search_by_name">Search by name...</string>
+    <string name="search_icon">Search Icon</string>
+    <string name="clear_icon">Clear Icon</string>
+    <string name="user_image">User Image</string>
+</resources>
