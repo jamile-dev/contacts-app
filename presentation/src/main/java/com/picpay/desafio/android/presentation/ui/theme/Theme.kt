@@ -5,7 +5,6 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import com.picpay.desafio.android.presentation.ui.theme.AppColors.Black
-import com.picpay.desafio.android.presentation.ui.theme.AppColors.Blue
 import com.picpay.desafio.android.presentation.ui.theme.AppColors.Green
 import com.picpay.desafio.android.presentation.ui.theme.AppColors.Red
 import com.picpay.desafio.android.presentation.ui.theme.AppColors.White
@@ -20,7 +19,7 @@ object AppColors {
 
 private val LightColorScheme =
     lightColorScheme(
-        primary = Blue,
+        primary = Green,
         secondary = Green,
         background = White,
         surface = White,

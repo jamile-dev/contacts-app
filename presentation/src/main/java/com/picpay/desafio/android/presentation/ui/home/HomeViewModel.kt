@@ -62,27 +62,25 @@ class HomeViewModel(
 
     fun toggleFavorite(userId: Int) {
         viewModelScope.launch {
-            val currentFavorites =
-                (favoritesUiState.value as? UIState.Success)?.data?.let { result ->
-                    if (result is Result.Success) {
-                        result.data.map { it.id }.toSet()
-                    } else {
-                        emptySet()
-                    }
-                } ?: emptySet()
+            val currentList = (_usersUiState.value as? UIState.Success)?.data ?: return@launch
+            val currentUser = currentList.firstOrNull { it.id == userId } ?: return@launch
+            val newFavoriteStatus = !currentUser.isFavorite
 
-            val isFavorite = userId !in currentFavorites
-
-            when (val result = favoriteUsersUseCase.invoke(userId, isFavorite)) {
+            when (val result = favoriteUsersUseCase.invoke(userId, newFavoriteStatus)) {
                 is Result.Success -> {
                     cachedUsers =
-                        cachedUsers.map {
-                            if (it.id == userId) it.copy(isFavorite = isFavorite) else it
+                        cachedUsers.map { user ->
+                            if (user.id == userId) user.copy(isFavorite = newFavoriteStatus) else user
                         }
-                    loadUsers()
+                    val updatedList =
+                        currentList.map { user ->
+                            if (user.id == userId) user.copy(isFavorite = newFavoriteStatus) else user
+                        }
+                    _usersUiState.value = UIState.Success(updatedList)
                 }
+
                 is Result.Error -> {
-                    favoritesUiState.value = UIState.Error(result.exception)
+                    _usersUiState.value = UIState.Error(result.exception)
                 }
             }
         }

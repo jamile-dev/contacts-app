@@ -50,7 +50,10 @@ fun SearchTextField(
         },
         trailingIcon = {
             if (query.value.isNotEmpty()) {
-                IconButton(onClick = { query.value = "" }) {
+                IconButton(onClick = {
+                    query.value = ""
+                    onSearch("")
+                }) {
                     Icon(
                         imageVector = Icons.Default.Clear,
                         contentDescription = stringResource(R.string.clear_icon),

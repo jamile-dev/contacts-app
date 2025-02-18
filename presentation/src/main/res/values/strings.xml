@@ -11,8 +11,9 @@
     <string name="try_again">Try again</string>
     <string name="retry">Retry</string>
     <string name="you_don_t_have_any_favorites_yet">You don\'t have any favorites yet!</string>
-    <string name="search_by_name">Search by name...</string>
+    <string name="search_by_name">Search by name…</string>
     <string name="search_icon">Search Icon</string>
     <string name="clear_icon">Clear Icon</string>
     <string name="user_image">User Image</string>
+    <string name="mark_as_favorite">Mark as favorite</string>
 </resources>
